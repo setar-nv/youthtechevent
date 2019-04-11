@@ -1,6 +1,7 @@
 const webpack = require('webpack')
 module.exports = {
-    publicPath: "./",
+  publicPath: "./",
+  outputDir: 'docs',
   configureWebpack: {
     plugins: [
       new webpack.ProvidePlugin({
