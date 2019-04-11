@@ -16,7 +16,7 @@
           <ul class="nav navbar-nav navbar-right">
             <li><router-link to="/">Home</router-link></li>
             <li><router-link to="/about">About</router-link></li>
-            <li><a href="https://google.com">google</a></li>
+            <li><a href="https://github.com/setar-nv/youthtechevent">Back to GitHub repo</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
