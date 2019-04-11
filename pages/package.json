@@ -11,8 +11,10 @@
     "bootstrap3": "^3.3.5",
     "core-js": "^2.6.5",
     "jquery": "^3.4.0",
+    "jquery-colorbox": "^1.6.4",
     "popper.js": "^1.15.0",
     "vue": "^2.6.6",
+    "vue-image-viewer": "^1.1.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },
