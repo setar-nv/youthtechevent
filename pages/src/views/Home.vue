@@ -279,6 +279,7 @@ export default {
 <style scoped lang="scss">
   .well{
     margin-bottom: 40px;
+    word-break: break-word;
   }
   .title-wrapper{    
     text-align: center;

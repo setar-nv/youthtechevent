@@ -38,5 +38,40 @@ export default {
       font-size: 18px;
       text-align: center;
     }
+
+    /*==========  Mobile First Method  ==========*/
+
+    /* Custom, iPhone Retina */ 
+    @media only screen and (min-width : 320px) {
+
+    }
+
+    /* Extra Small Devices, Phones */ 
+    @media only screen and (min-width : 480px) {
+
+    }
+
+    /* Small Devices, Tablets */
+    @media only screen and (min-width : 768px) {
+      #ImageModal{
+        .modal-dialog{
+          width: 100% !important;
+         // max-width: 1000px;
+        }
+        .title{
+          font-size: 12px;
+        }
+      }
+    }
+
+    /* Medium Devices, Desktops */
+    @media only screen and (min-width : 992px) {
+
+    }
+
+    /* Large Devices, Wide Screens */
+    @media only screen and (min-width : 1200px) {
+
+    }
   }
 </style>
