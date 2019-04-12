@@ -14,7 +14,7 @@
             <p>Follow the easy steps below to get up and running with this board using standard Arduino libraries.</p>
 
             <p>This board is based on the ESP8266 chip and has onboard WiFi,  a 0.96inch 128*32 OLED display, lithium battery 
-              connector charging and a CP2014 USB to serial interface. It also works with the Arduino IDE!</p>
+              connector charging and a CP2014 USB to serial interface.</p>
           </div>
 
           <img class="col-sm-4 modal-image" v-bind:src="imageBadge.image" @click="showImage(imageBadge.image, imageBadge.title)">
@@ -46,7 +46,7 @@
         <div class="instruction-wrapper row">
           <span class="instruction-number">2.</span>
           <p class="instruction col-sm-8">
-            Open the Boards Manager from Tools > Board:xxxxx menu
+            Go to Tools > Port and make sure COM4 is selected (It might not be COM4)
           </p>
           <img class="col-sm-4 modal-image" v-bind:src="arduinoIde2.image" @click="showImage(arduinoIde2.image,arduinoIde2.title)">
         </div>
@@ -54,17 +54,121 @@
         <div class="instruction-wrapper row">
           <span class="instruction-number">3.</span>
           <p class="instruction col-sm-8">
-            Find esp8266 by ESP8266 Community in the list and click Install. 
-            The ESP8266 Hardware Libraries are now installed and you can test your new board with a simple Sketch.
+            Open the Boards Manager from Tools > Board:xxxxx menu
           </p>
           <img class="col-sm-4 modal-image" v-bind:src="arduinoIde3.image" @click="showImage(arduinoIde3.image,arduinoIde3.title)">
         </div>
 
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">4.</span>
+          <p class="instruction col-sm-8">
+            Find esp8266 by ESP8266 Community in the list and click Install.
+          </p>
+          <img class="col-sm-4 modal-image" v-bind:src="arduinoIde4.image" @click="showImage(arduinoIde4.image,arduinoIde4.title)">
+        </div>
+
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">5.</span>
+          <div class="col-sm-8 instruction">
+            <p>
+              In the Arduino IDE, in the Tools > Board menu choose NodeMCU 1.0 (ESP-12E Module).
+            </p>
+            <p>The ESP8266 Hardware Libraries are now configured and is ready for use.</p>
+          </div>
+          <img class="col-sm-4 modal-image" v-bind:src="arduinoIde5.image" @click="showImage(arduinoIde5.image,arduinoIde5.title)">
+        </div>
+
       </div><!-- well -->
 
-      <ImageModal v-bind:selectedImageUrl="selectedImageUrl" v-bind:title="selectedImageTitle" />
+      <div class="well">
+        <h3>Connect to your own WIFI to communicate with Badge APP</h3>
+        <div class="row">
+          <div class="text-left col-sm-12">
+            <p>
+              This section section describes how to connect to your own WIFI at home so you can communicate with the YouthTechEvent App.
+              In order to connect with the App you will first need to upload the badge firmware to the badge.
+            </p>
+
+            <p>
+              There are two ways to upload the badge firmware to your app. 
+              The first way is to clone the GitHub repository and open this in the Arduino IDE. (<a target="_blank" href="https://help.github.com/en/articles/cloning-a-repository">Info on cloning a repository</a>).
+              The other ( and simpler ) way is to copy the code manually and save it in the Arduino IDE. For simplicity's sake well follow the second option.
+            </p>
+          </div>
+        </div>
+
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">1.</span>
+          <p class="instruction col-sm-8">
+            Go to the badge's GitHub repository. <a target="_blank" href="https://github.com/setar-nv/youthtechevent">Link to repository.</a> <br>
+            Click on BadgeFirmware > BadgeFirmware.ino to view to firmware code.
+          </p>
+          <img class="col-sm-4 modal-image" v-bind:src="arduinoIde6.image" @click="showImage(arduinoIde6.image,arduinoIde6.title)">
+        </div>
+
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">2.</span>
+          <p class="instruction col-sm-8">
+            Select and copy all the code in BadgeFirmware.ino and copy this in a new file in the Arduino IDE.
+          </p>
+          <img class="col-sm-4 modal-image" v-bind:src="arduinoIde7.image" @click="showImage(arduinoIde7.image,arduinoIde7.title)">
+        </div>
+
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">3.</span>
+          <p class="instruction col-sm-8">
+            Edit the WIFI ssid (WIFI name) and password to match your WIFI settings at home. Edit the badgeName variable (optional) to view this text on your badge display.
+            Save after editing.
+          </p>
+          <img class="col-sm-4 modal-image" v-bind:src="arduinoIde9.image" @click="showImage(arduinoIde9.image,arduinoIde9.title)">
+        </div>
+
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">4.</span>
+          <p class="instruction col-sm-8">
+            Go to Tools > Serial Monitor to open the Serial Monitor. Make sure the baud rate is set to 115200.
+          </p>
+          <img class="col-sm-4 modal-image" v-bind:src="arduinoIde10.image" @click="showImage(arduinoIde10.image,arduinoIde10.title)">
+        </div>
+
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">5.</span>
+          <p class="instruction col-sm-8">
+            Make sure your badge is connected to your machine first. Click on the upload button to upload the Badge firmware.
+            If successfully connected you should be able to see your WIFI name on the top right corner of your badge display.
+            After the upload process is done you will be able to find the Badge's unique id in the Serial Monitor.
+          </p>
+          <img class="col-sm-4 modal-image" v-bind:src="arduinoIde11.image" @click="showImage(arduinoIde11.image,arduinoIde11.title)">
+        </div>
+
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">6.</span>
+          <p class="instruction col-sm-8">
+            Open the App. In the main menu tap on badge. Fill in the unique ID in the MAC address field. Fill it in exactly the same as in the Serial Monitor, including colons and case sensitive.
+          Fill in a desired name to show on the badge display.
+          </p>
+          <img class="col-sm-4 modal-image" v-bind:src="arduinoIde12.image" @click="showImage(arduinoIde12.image,arduinoIde12.title)">
+        </div>
+
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">6.</span>
+          <p class="instruction col-sm-8">
+            If everything went according to plan you should now be now able to communicate with the badge. You will now be able to control the LED lights individually or by running the demos. 
+            You can also check the battery and change the display name on the badge display. Have Fun!
+          </p>
+          <img class="col-sm-4 modal-image" v-bind:src="arduinoIde13.image" @click="showImage(arduinoIde13.image,arduinoIde13.title)">
+        </div>
+
+ 
+
+      </div><!-- well -->
+
 
     </div> <!-- /container -->
+    <div class="well setar-code">
+      <img v-bind:src="setarCode" alt="" srcset="">
+    </div>
+    <ImageModal v-bind:selectedImageUrl="selectedImageUrl" v-bind:title="selectedImageTitle" />
   </div>
 </template>
 
@@ -73,8 +177,18 @@
 import ImageModal from '@/components/ImageModal.vue'
 import imageBadge from '../assets/badge-image.jpg'
 import arduinoIde1 from '../assets/add-library-url.jpg'
-import arduinoIde2 from '../assets/select-board-manager.jpg'
-import arduinoIde3 from '../assets/library-download.jpg'
+import arduinoIde2 from '../assets/select-port.jpg'
+import arduinoIde3 from '../assets/select-board-manager.jpg'
+import arduinoIde4 from '../assets/library-download.jpg'
+import arduinoIde5 from '../assets/select-nodemcu.jpg'
+import arduinoIde6 from '../assets/github-page-01.png'
+import arduinoIde7 from '../assets/github-page-02.png'
+import arduinoIde9 from '../assets/edit-wifi.png'
+import arduinoIde10 from '../assets/serial-monitor.png'
+import arduinoIde11 from '../assets/upload.png'
+import arduinoIde12 from '../assets/app-settings.png'
+import arduinoIde13 from '../assets/app-connected.png'
+import setarCode from '../assets/setar-code.png'
 import JQuery from 'jquery'
 let $ = JQuery
 
@@ -92,12 +206,49 @@ export default {
       },
       arduinoIde2: {
         image: arduinoIde2,
-        title: '2. Open the Boards Manager from Tools > Board:xxxxx menu'
+        title: '2. Go to Tools > Port and make sure COM4 is selected (It might not be COM4)'
       },
       arduinoIde3: {
         image: arduinoIde3,
-        title: '3. Find esp8266 by ESP8266 Community in the list and click Install'
+        title: '3. Open the Boards Manager from Tools > Board:xxxxx menu'
       },
+      arduinoIde4: {
+        image: arduinoIde4,
+        title: '4. Find esp8266 by ESP8266 Community in the list and click Install'
+      },
+      arduinoIde5: {
+        image: arduinoIde5,
+        title: '5. In the Arduino IDE, in the Tools > Board menu choose NodeMCU 1.0 (ESP-12E Module)'
+      },
+      arduinoIde6: {
+        image: arduinoIde6,
+        title: '1. Click on BadgeFirmware > BadgeFirmware.ino to view to firmware code'
+      },
+      arduinoIde7: {
+        image: arduinoIde7,
+        title: '2. Select and copy all the code in BadgeFirmware.ino'
+      },
+      arduinoIde9: {
+        image: arduinoIde9,
+        title: '3. Edit Badge Name and WIFI settings'
+      },
+      arduinoIde10: {
+        image: arduinoIde10,
+        title: '4. Go to Tools > Serial Monitor to open the Serial Monitor'
+      },
+      arduinoIde11: {
+        image: arduinoIde11,
+        title: '5. Edit Badge Name and WIFI settings'
+      },
+      arduinoIde12: {
+        image: arduinoIde12,
+        title: '6. Edit Badge Name and WIFI settings'
+      },
+      arduinoIde13: {
+        image: arduinoIde13,
+        title: '7. Comtrol the badge through the App'
+      },
+      setarCode,
       selectedImageUrl: null,
       selectedImageTitle: null
     }
@@ -126,6 +277,9 @@ export default {
 
 
 <style scoped lang="scss">
+  .well{
+    margin-bottom: 40px;
+  }
   .title-wrapper{    
     text-align: center;
     margin-bottom: 20px;
@@ -143,10 +297,20 @@ export default {
       font-size: 16px;
       position: absolute;
     }
-    p.instruction{
+    .instruction{
       padding-left: 26px;
       display: inline-block;
       //margin-top: -23px;
+    }
+  }
+  .setar-code{
+    margin-top: 40px;
+    margin-bottom: 0;
+    padding: 60px 0;
+    background: #18bc9c;
+    img{
+      display: block;
+      margin: 0 auto;
     }
   }
 </style>

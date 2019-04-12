@@ -29,7 +29,7 @@
 .navbar {
   a{
     font-weight: 600 !important;
-    text-transform: uppercase !important;
+    text-transform: uppercase;
     &:hover{
       color: #fff !important;
       text-decoration: underline !important;
@@ -39,6 +39,6 @@
 .navbar-brand{
   pointer-events: none;
   font-weight: 500 !important;
-  text-transform: none !important;
+  text-transform: capitalize !important;
 }
 </style>
