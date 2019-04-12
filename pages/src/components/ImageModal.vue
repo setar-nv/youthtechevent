@@ -6,7 +6,7 @@
 
         <div class="modal-body">
           <img v-bind:src="selectedImageUrl"/>
-          <p><small>{{title}}</small></p>
+          <p class="title"><small>{{title}}</small></p>
         </div>
       </div>
     </div>
@@ -31,6 +31,12 @@ export default {
     .modal-dialog{
       width: 80%;
       max-width: 1000px;
+    }
+    .title{
+      margin-top: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      text-align: center;
     }
   }
 </style>
