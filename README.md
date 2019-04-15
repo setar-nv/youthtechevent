@@ -3,7 +3,7 @@
 [Go To Documentation](https://setar-nv.github.io/youthtechevent/pages/docs)
 
 ## Badge presentation slides
-[Google slides] (https://docs.google.com/presentation/d/e/2PACX-1vT2E_sPb288y6g7BDr59L4_BAdC5MnjVodnJ5BLc8mVVFpKp_VXtXNFJBG4E71j__O-TfSWtvGrnYLA/pub?start=false&loop=false&delayms=3000&slide=id.g55fab874c1_0_39)
+[Google slides](https://docs.google.com/presentation/d/e/2PACX-1vT2E_sPb288y6g7BDr59L4_BAdC5MnjVodnJ5BLc8mVVFpKp_VXtXNFJBG4E71j__O-TfSWtvGrnYLA/pub?start=false&loop=false&delayms=3000&slide=id.g55fab874c1_0_39)
 
 ## Badge Firmware compiling extra info
 You will need to install the following libraries to be able to compile the Badge Firmware.
