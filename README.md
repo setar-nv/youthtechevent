@@ -7,7 +7,6 @@
 
 ## Badge Firmware compiling extra info
 You will need to install the following libraries to be able to compile the Badge Firmware.
-* esp8266 by ESP8266 Community
 * PubSubClient by Nick O'Leary
 * ArduinoJson by Benoit Blanchon
 * U8g2 by oliver
