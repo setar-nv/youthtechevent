@@ -36,36 +36,60 @@
 
         <div class="instruction-wrapper row">
           <span class="instruction-number">1.</span>
-          <p class="instruction col-sm-8">
+          <div class="instruction col-sm-8">
+            <p>
               In order to connect your machine to the driver you will need to install the appropriate driver for your system.
               Use the the link below and download the appropriate driver for your system.<br>
-            <a target="_blank" href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">Download page USB driver</a>
-          </p>
+              <a target="_blank" href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">Download page USB driver</a>
+            </p>
+
+            <p>
+              <strong>For Mac users:</strong> <br>
+              After installing the driver you will have to allow the driver to run on your machine. To do this open "System Preferences" >"Security & Privacy". <br>
+              On the general page underneath you should be able to see the text "Some system software was blocked from loading."
+              Click the button allow next to it. Check the checkbox for "Silicon Laboratories inc" and click ok.
+            </p>
+          </div>
           <img class="col-sm-4 modal-image" v-bind:src="driverImage.image" @click="showImage(driverImage.image,driverImage.title)">
         </div>
 
         <div class="instruction-wrapper row">
           <span class="instruction-number">2.</span>
           <p class="instruction col-sm-8">
-            In the IDE, open the File Menu and choose Preferences and enter:
-            <strong>http://arduino.esp8266.com/stable/package_esp8266com_index.json</strong> into the Additional Board Manager URLs field.
+            Open the Arduino IDE and go to Sketch > Include Library > Manage Libraries. <br>
+            Search and install the following libraries:
+            <ul>
+              <li>PubSubClient by Nick O'Leary</li>
+              <li>ArduinoJson by Benoit Blanchon (version 6.9.0 or higher)</li>
+              <li>U8g2 by oliver</li>
+              <li>TaskScheduler by Anatoli Arkhipenko</li>
+            </ul>
+            Make sure they are from the corresponding authors mentioned above.
+          </p>
+          <img class="col-sm-4 modal-image" v-bind:src="librariesModal.image" @click="showImage(librariesModal.image,librariesModal.title)">
+        </div>
+
+        <div class="instruction-wrapper row">
+          <span class="instruction-number">3.</span>
+          <p class="instruction col-sm-8">
+            In the IDE, open the File Menu and choose Preferences and enter: <br>
+            <strong>http://arduino.esp8266.com/stable/package_esp8266com_index.json</strong> <br>
+             into the Additional Board Manager URLs field.
           </p>
           <img class="col-sm-4 modal-image" v-bind:src="arduinoIde1.image" @click="showImage(arduinoIde1.image,arduinoIde1.title)">
         </div>
 
 
         <div class="instruction-wrapper row">
-          <span class="instruction-number">3.</span>
+          <span class="instruction-number">4.</span>
           <p class="instruction col-sm-8">
-            Go to Tools > Port and make sure COM4 is selected (It might not be COM4) <br> <br>
-            If you experience any difficulty with your USB connection install the following driver: <br>
-            <a target="_blank" href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">USB driver</a>
+            Go to Tools > Port and make sure COM4 is selected (It might not be COM4)
           </p>
           <img class="col-sm-4 modal-image" v-bind:src="arduinoIde2.image" @click="showImage(arduinoIde2.image,arduinoIde2.title)">
         </div>
 
         <div class="instruction-wrapper row">
-          <span class="instruction-number">4.</span>
+          <span class="instruction-number">5.</span>
           <p class="instruction col-sm-8">
             Open the Boards Manager from Tools > Board:xxxxx menu
           </p>
@@ -73,24 +97,15 @@
         </div>
 
         <div class="instruction-wrapper row">
-          <span class="instruction-number">5.</span>
+          <span class="instruction-number">6.</span>
           <p class="instruction col-sm-8">
-            Search and install the following libraries:
-            <ul>
-              <li>esp8266 by ESP8266 Community</li>
-              <li>PubSubClient by Nick O'Leary</li>
-              <li>ArduinoJson by Benoit Blanchon (version 6.9.0 or higher)</li>
-              <li>U8g2 by oliver</li>
-              <li>TaskScheduler by Anatoli Arkhipenko</li>
-            </ul>
-
-            
+            Search and install the following board library: esp8266 by ESP8266 Community
           </p>
           <img class="col-sm-4 modal-image" v-bind:src="arduinoIde4.image" @click="showImage(arduinoIde4.image,arduinoIde4.title)">
         </div>
 
         <div class="instruction-wrapper row">
-          <span class="instruction-number">6.</span>
+          <span class="instruction-number">7.</span>
           <div class="col-sm-8 instruction">
             <p>
               In the Arduino IDE, in the Tools > Board menu choose NodeMCU 1.0 (ESP-12E Module).
@@ -199,6 +214,7 @@
 import ImageModal from '@/components/ImageModal.vue'
 import imageBadge from '../assets/badge-image.jpg'
 import driverImage from '../assets/driver-page.jpg'
+import librariesModal from '../assets/libraries-01.jpg'
 import arduinoIde1 from '../assets/add-library-url.jpg'
 import arduinoIde2 from '../assets/select-port.jpg'
 import arduinoIde3 from '../assets/select-board-manager.jpg'
@@ -227,25 +243,29 @@ export default {
         image: driverImage,
         title: '1. Download and install appropriate driver'
       },
+      librariesModal: {
+        image: librariesModal,
+        title: '2. Search an install libraries'
+      },
       arduinoIde1: {
         image: arduinoIde1,
-        title: '2. Enter Additional Board Manager URL'
+        title: '3. Enter Additional Board Manager URL'
       },
       arduinoIde2: {
         image: arduinoIde2,
-        title: '3. Go to Tools > Port and make sure COM4 is selected (It might not be COM4)'
+        title: '4. Go to Tools > Port and make sure COM4 is selected (It might not be COM4)'
       },
       arduinoIde3: {
         image: arduinoIde3,
-        title: '4. Open the Boards Manager from Tools > Board:xxxxx menu'
+        title: '5. Open the Boards Manager from Tools > Board:xxxxx menu'
       },
       arduinoIde4: {
         image: arduinoIde4,
-        title: '5. Search and install the required libraries'
+        title: '6. Search and install the required board library'
       },
       arduinoIde5: {
         image: arduinoIde5,
-        title: '6. In the Arduino IDE, in the Tools > Board menu choose NodeMCU 1.0 (ESP-12E Module)'
+        title: '7. In the Arduino IDE, in the Tools > Board menu choose NodeMCU 1.0 (ESP-12E Module)'
       },
       arduinoIde6: {
         image: arduinoIde6,
