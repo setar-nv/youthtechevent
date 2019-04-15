@@ -46,7 +46,9 @@
         <div class="instruction-wrapper row">
           <span class="instruction-number">2.</span>
           <p class="instruction col-sm-8">
-            Go to Tools > Port and make sure COM4 is selected (It might not be COM4)
+            Go to Tools > Port and make sure COM4 is selected (It might not be COM4) <br> <br>
+            If you experience any difficulty with your USB connection install the following driver: <br>
+            <a target="_blank" href="https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers">USB driver</a>
           </p>
           <img class="col-sm-4 modal-image" v-bind:src="arduinoIde2.image" @click="showImage(arduinoIde2.image,arduinoIde2.title)">
         </div>
@@ -62,7 +64,16 @@
         <div class="instruction-wrapper row">
           <span class="instruction-number">4.</span>
           <p class="instruction col-sm-8">
-            Find esp8266 by ESP8266 Community in the list and click Install.
+            Search and install the following libraries:
+            <ul>
+              <li>esp8266 by ESP8266 Community</li>
+              <li>PubSubClient by Nick O'Leary</li>
+              <li>ArduinoJson by Benoit Blanchon (version 6.9.0 or higher)</li>
+              <li>U8g2 by oliver</li>
+              <li>TaskScheduler by Anatoli Arkhipenko</li>
+            </ul>
+
+            
           </p>
           <img class="col-sm-4 modal-image" v-bind:src="arduinoIde4.image" @click="showImage(arduinoIde4.image,arduinoIde4.title)">
         </div>
@@ -214,7 +225,7 @@ export default {
       },
       arduinoIde4: {
         image: arduinoIde4,
-        title: '4. Find esp8266 by ESP8266 Community in the list and click Install'
+        title: '4. Search and install the required libraries'
       },
       arduinoIde5: {
         image: arduinoIde5,
